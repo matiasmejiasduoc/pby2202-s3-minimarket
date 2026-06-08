@@ -1,5 +1,6 @@
 package com.minimarket.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.Set;
 
@@ -12,6 +13,7 @@ public class Rol {
     @Column(nullable = false, unique = true)
     private String nombre;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "roles")
     private Set<Usuario> usuarios;
 
